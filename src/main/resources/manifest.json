@@ -1,0 +1,19 @@
+{
+  "Group": "Tommhs",
+  "Name": "MeltableIce",
+  "Version": "1.0.0",
+  "Description": "Adds a craftable Meltable Ice block (Tommhs_Meltable_Rock_Ice) that melts into water when a torch or other heat source is placed nearby.",
+  "Authors": [
+    {
+      "Name": "Tom"
+    }
+  ],
+  "Website": "",
+  "ServerVersion": "*",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "LoadBefore": {},
+  "DisabledByDefault": false,
+  "Main": "de.tommhs.meltable.ice.MeltableIcePlugin",
+  "IncludesAssetPack": true
+}

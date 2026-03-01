@@ -1,47 +1,49 @@
-# Tommhs Ice Melt
+# Tommhs Meltable Ice
 
-This project builds a single Hytale plugin JAR that also includes an asset pack.
+A Hytale server plugin that ships with an asset pack and adds a **craftable meltable ice block**.
 
-## What it does
+Place the ice like normal blocks, then place a **heat source** nearby (torch / campfire / fire) to melt it into **water**.
 
-- Adds a placeable block item: `Tommhs_Rock_Ice`
-- When a heat source block is placed (block key contains `torch`, `campfire`, or `fire`), nearby `Tommhs_Rock_Ice` blocks are converted into water (fluid).
+## Features
+
+- Adds a placeable block item: `Tommhs_Meltable_Rock_Ice`
+- Crafting recipe (Farming Workbench):
+  - **Input:** `Rock_Ice` ×1 + `Essence_of_Life` ×10
+  - **Output:** `Tommhs_Meltable_Rock_Ice` ×10
+- Heat source detection:
+  - Triggers when a placed block key contains: `torch`, `campfire`, or `fire`
+- Melting behavior:
+  - Scans a radius around the heat source and converts matching meltable ice blocks into water (fluid layer)
+
+## Installation
+
+1. Build the plugin JAR (see **Build** below).
+2. Copy the resulting JAR into your mods folder, for example:
+  - User mods folder:
+    - `C:\Users\<YOU>\AppData\Roaming\Hytale\UserData\Mods\`
+  - Or your dedicated server mods folder (depends on your setup)
+
+After starting the server, you should see logs indicating that the plugin loaded and the melt system is registered.
 
 ## Build
 
 ### Prerequisites
 
-- Java 25
+- **Java 25**
+- **Gradle 9.1+** (required for Java 25)
+  - The project includes the Gradle wrapper (`gradlew` / `gradlew.bat`) — use that.
 
-### Build & deploy to your server mods folder
+### Configure local paths (not committed)
 
-1. Edit `gradle.properties` and set:
+This repo ignores `gradle.properties` on purpose because it contains local machine paths.
 
-```
-hytaleModsDir=H:/workspace/Hytale/sortMod/mods
-```
+You have two options:
 
-2. Run:
+#### Option A: Pass paths via Gradle `-P` parameters (recommended)
 
-```
-./gradlew build
-```
+PowerShell example:
 
-If you don't have a Gradle wrapper yet, run via IntelliJ Gradle tool window or install Gradle.
-
-### HytaleServer.jar path
-
-By default the build uses the launcher "latest" server jar:
-
-`%APPDATA%\\Hytale\\install\\release\\package\\game\\latest\\Server\\HytaleServer.jar`
-
-Override if needed:
-
-```
-./gradlew build -PhytaleServerJar="C:/path/to/HytaleServer.jar"
-```
-
-## Notes
-
-- Fluid placement uses the indexed fluid id `7` for `Water_Source`.
-  If this changes in a future update, adjust `WATER_SOURCE_FLUID_ID` in `FluidPlacement`.
+```powershell
+./gradlew build `
+  -PhytaleServerJarDir="C:/Users/<YOU>/AppData/Roaming/Hytale/install/release/package/game/latest/Server" `
+  -PhytaleModsDir="C:/Users/<YOU>/AppData/Roaming/Hytale/UserData/Mods"

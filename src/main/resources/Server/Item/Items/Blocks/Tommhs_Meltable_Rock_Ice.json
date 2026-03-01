@@ -1,0 +1,77 @@
+{
+  "TranslationProperties": {
+    "Name": "items.Tommhs_Meltable_Rock_Ice.name",
+    "Description": "items.Tommhs_Meltable_Rock_Ice.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Rock_Ice.png",
+  "Categories": [
+    "Blocks.Rocks"
+  ],
+  "PlayerAnimationsId": "Block",
+
+  "Recipe": {
+    "TimeSeconds": 1.0,
+    "KnowledgeRequired": false,
+    "OutputQuantity": 10,
+    "Input": [
+      { "ItemId": "Rock_Ice", "Quantity": 1 },
+      { "ItemId": "Ingredient_Life_Essence", "Quantity": 10 }
+    ],
+    "BenchRequirement": [
+      {
+        "Id": "Farmingbench",
+        "Type": "Crafting",
+        "Categories": [
+          "Farming"
+        ]
+      }
+    ]
+  },
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Cube",
+    "Group": "Ice",
+    "Flags": {},
+    "Gathering": {
+      "Breaking": {
+        "DropList": "Rock_Ice",
+        "GatherType": "Rocks"
+      }
+    },
+    "BlockParticleSetId": "Ice",
+    "Textures": [
+      {
+        "All": "BlockTextures/Rock_Ice.png",
+        "Weight": 1
+      }
+    ],
+    "BlockSoundSetId": "Ice",
+    "MovementSettings": {
+      "HorizontalSpeedMultiplier": 1,
+      "Drag": 0.99,
+      "Friction": 0.025,
+      "JumpForceMultiplier": 1
+    },
+    "TransitionTexture": "BlockTextures/Transition_Rock_Ice2.png",
+    "TransitionToGroups": [
+      "Stone",
+      "Grass",
+      "Sand",
+      "Dirt",
+      "Ice",
+      "Gravel"
+    ],
+    "ParticleColor": "#d8fffe",
+    "TransitionToTag": "Fluid=Water",
+    "CubeShadingMode": "Standard",
+    "Opacity": "Solid"
+  },
+
+  "Tags": {
+    "Type": [
+      "Rock"
+    ]
+  },
+  "MaxStack": 9999,
+  "ItemSoundSetId": "ISS_Blocks_Stone"
+}

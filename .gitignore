@@ -1,0 +1,30 @@
+# Gradle
+.gradle/
+build/
+out/
+**/build/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Java
+*.class
+*.log
+hs_err_pid*
+replay_pid*
+
+# OS / Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Temporary / local env files
+*.tmp
+*.swp
+*.swo
+
+gradle.properties
