@@ -34,7 +34,7 @@
     "Flags": {},
     "Gathering": {
       "Breaking": {
-        "DropList": "Rock_Ice",
+        "DropList": "Tommhs_Meltable_Rock_Ice",
         "GatherType": "Rocks"
       }
     },

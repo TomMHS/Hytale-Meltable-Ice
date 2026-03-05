@@ -7,7 +7,7 @@ plugins {
 }
 
 group = "de.tommhs"
-version = "1.0.0"
+version = "1.1.0"
 
 repositories {
     mavenCentral()
@@ -79,7 +79,9 @@ tasks.withType<JavaCompile> {
 }
 
 tasks.named<Jar>("jar") {
-    archiveFileName.set("Tommhs_Meltable_Ice.jar")
+    archiveBaseName.set("Tommhs_Meltable_Ice")
+    archiveVersion.set(project.version.toString())
+    archiveClassifier.set("")
 }
 
 val deployToServer = tasks.register<Copy>("deployToServer") {
